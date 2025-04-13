@@ -1,11 +1,15 @@
 const { Client } = require('pg');
 
 const client = new Client({
-    user: 'dosia',
-    host: 'localhost',
-    database: 'var1',
-    password: '1234',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL, // Важно!
+    ssl: {
+      rejectUnauthorized: false, // Обязательно для Railway
+    },
+    //user: 'dosia',
+    //host: 'localhost',
+    //database: 'var1',
+    //password: '1234',
+    //port: 5432,
 });
 
 const connectDB = async () => {

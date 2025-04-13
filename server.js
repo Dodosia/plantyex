@@ -19,5 +19,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     res.send('Добро пожаловать на главную страницу!');
 // });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Секция регистрации -->
+    <div id="auth-section">
+        <h2>Добавить пользователя</h2>
+        <form id="register-form">
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit">Добавить пользователя</button>
+        </form>
+    </div>
+
+    <!-- Основной интерфейс -->
+    <div id="user-actions">
+        <!-- Добавление растения -->
+        <div class="section">
+            <h2>Добавить растение</h2>
+            <form id="add-plant-form">
+                <input type="number" name="user_id" placeholder="ID владельца" required>
+                <input type="text" name="name" placeholder="Название" required>
+                <input type="text" name="species" placeholder="Тип растения" required>
+                <input type="text" name="description" placeholder="Описание">
+                <input type="text" name="region" placeholder="Регион" required>
+                
+                <button type="submit">Добавить растение</button>
+            </form>
+
+        <!-- Список растений -->
+        <div class="container">
+            <h2>Доступные растения</h2>
+            <div id="plants-container" class="grid"></div>
+        </div>
+
+        <!-- Создание предложения -->
+        <div class="section">
+            <h2>Новое предложение</h2>
+            <form id="create-offer-form">
+                <input type="number" name="sender_id" placeholder="ID отправителя" required>
+                <input type="number" name="receiver_id" placeholder="ID получателя" required>
+                <input type="number" name="plant_id" placeholder="ID растения" required>
+                <button type="submit">Создать предложение</button>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Активные предложения</h2>
+            <div id="offers-container" class="grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
